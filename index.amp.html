@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>Silicode Tech - Developer Community & AI Learning</title>
+    <meta name="description" content="Join Silicode Tech - a passionate developer community. Learn AI chips, explore hardware projects, and build the future together. Free tutorials and tech insights.">
+    <link rel="canonical" href="https://silicode.tech/">
+    
+    <!-- AMP Boilerplate -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    
+    <!-- AMP Components -->
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    
+    <!-- Custom Styles -->
+    <style amp-custom>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo amp-img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: #888;
+            transform: translateX(10px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+            position: relative;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .hero-email-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .hero-email-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-email-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-email-form button {
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            letter-spacing: 0.01em;
+            font-family: inherit;
+        }
+
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            color: #ccc;
+            line-height: 1.7;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: #111;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .stat p {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 5%;
+            background: #0a0a0a;
+        }
+
+        .features h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            background: #111;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #222;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .feature p {
+            color: #bbb;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 6rem 5%;
+            background: #000;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .newsletter p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 1rem;
+            flex-direction: column;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-family: inherit;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #666;
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+            letter-spacing: 0.01em;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5% 2rem;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #888;
+            text-decoration: none;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-section a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            color: #666;
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <amp-img src="silicode_horizontal_logo.png" alt="Silicode Tech" width="200" height="70" layout="fixed"></amp-img>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/learn.html">Learn</a></li>
+                <li><a href="/#updates">Updates</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Silicode Tech: Building the Future<br>Together</h1>
+            <p>Join our passionate community of developers, hardware enthusiasts, and tech innovators. We learn, grow, and create cutting-edge solutions in the ever-evolving world of technology.</p>
+            <form class="hero-email-form" method="post" action-xhr="https://script.google.com/macros/s/AKfycbz2vhZiCJq2CZPvWTC3isfxV6h4bz34lsd3sDT6lYsO3FKkmnP_KKU7t65TQX1Ub3CdMg/exec" target="_top">
+                <input type="email" name="email" placeholder="Enter your email for early access" required>
+                <button type="submit">Get Early Access</button>
+            </form>
+            <a href="/#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Silicode Tech Community</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>We are a passionate group of college friends who have ventured into different areas of the tech industry, working at leading companies worldwide. Our diverse experiences span software development, hardware engineering, AI research, and product innovation.</p>
+                    <p>United by our shared love for technology, we believe in the power of community-driven learning and collaborative growth. Whether you're just starting your tech journey or you're a seasoned professional, there's a place for you in our community.</p>
+                    <p>Our mission is to create a space where curious minds can explore, learn, and build the next generation of technological solutions together.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <h3>Growing</h3>
+                        <p>Community of Tech Enthusiasts</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Regular</h3>
+                        <p>Tech Updates & Insights</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Diverse</h3>
+                        <p>Industry Experience</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Always</h3>
+                        <p>Learning & Sharing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="community">
+        <div class="container">
+            <h2>Tech Development & Innovation</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">💻</div>
+                    <h3>Code & Development</h3>
+                    <p>We're working on sharing programming insights, frameworks, and best practices. Join us as we build this community together.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Hardware Innovation</h3>
+                    <p>Exploring cool hardware projects and tech experiments. We're just getting started with some fun stuff.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Tech Updates</h3>
+                    <p>Planning to curate the latest industry news and tech breakthroughs. Stay tuned as we figure out the best way to share this.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Community Learning</h3>
+                    <p>We're building a space where we can all learn together. No fancy workshops yet, but we're working on it!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research & Innovation</h3>
+                    <p>Diving into AI, robotics, and other emerging tech. We're experimenting and learning as we go - come join the journey!</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Product Development</h3>
+                    <p>Working on some cool projects behind the scenes. We'll share more as we build and test things out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="updates">
+        <div class="container">
+            <h2>Tech Updates & Community</h2>
+            <p>Get the latest tech updates, community news, and exclusive content delivered straight to your inbox.</p>
+            <form class="newsletter-form" method="post" action-xhr="https://script.google.com/macros/s/AKfycbz2vhZiCJq2CZPvWTC3isfxV6h4bz34lsd3sDT6lYsO3FKkmnP_KKU7t65TQX1Ub3CdMg/exec" target="_top">
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            
+            <!-- Social Share -->
+            <div class="social-share">
+                <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
+                <amp-social-share type="linkedin" width="45" height="33"></amp-social-share>
+                <amp-social-share type="email" width="45" height="33"></amp-social-share>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Silicode Tech</h3>
+                <p>Building the future of technology through community collaboration and innovation.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <a href="https://substack.com/@silicode" target="_blank">Substack Blog</a><br>
+                <a href="mailto:silicode.in@gmail.com">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="https://x.com/silicode_tech" target="_blank">Twitter</a><br>
+                <a href="https://linkedin.com/company/silicode/" target="_blank">LinkedIn</a><br>
+                <a href="https://youtube.com/@silicode_tech" target="_blank">YouTube</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Silicode Tech. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

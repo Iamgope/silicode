@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intro to AI Chips Course - Silicode Learn | Free Tech Education</title>
-    <meta name="description" content="Master AI chips with our free comprehensive course! Learn silicon manufacturing, transistors, CPU vs GPU vs TPU, and why AI needs special chips. Beginner-friendly tutorials with interactive quizzes.">
+    <title>AI Chips Course - Silicode Learn | Free Tutorial</title>
+    <meta name="description" content="Master AI chips with our free comprehensive course! Learn silicon manufacturing, transistors, CPU vs GPU vs TPU, and why AI needs special chips. Interactive quizzes included.">
     <meta name="keywords" content="AI chips course, silicon chips tutorial, microprocessor learning, CPU GPU TPU comparison, transistor basics, hardware education, free tech course, AI hardware, chip manufacturing, tech learning">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="author" content="Silicode Tech">
@@ -15,9 +15,10 @@
     <meta name="distribution" content="global">
     <meta name="rating" content="general">
     <link rel="canonical" href="https://silicode.tech/learn.html">
+    <link rel="amphtml" href="https://silicode.tech/learn.amp.html">
 
     <meta property="og:type" content="course">
-    <meta property="og:title" content="Intro to AI Chips Course - Silicode Learn | Free Tech Education">
+    <meta property="og:title" content="AI Chips Course - Silicode Learn | Free Tutorial">
     <meta property="og:description" content="Master AI chips with our free comprehensive course! Learn silicon manufacturing, transistors, CPU vs GPU vs TPU, and why AI needs special chips. Beginner-friendly tutorials with interactive quizzes.">
     <meta property="og:url" content="https://silicode.tech/learn.html">
     <meta property="og:image" content="https://silicode.tech/silicode_horizontal_logo.png">
@@ -33,7 +34,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@silicode_tech">
     <meta name="twitter:creator" content="@silicode_tech">
-    <meta name="twitter:title" content="Intro to AI Chips Course - Silicode Learn | Free Tech Education">
+    <meta name="twitter:title" content="AI Chips Course - Silicode Learn | Free Tutorial">
     <meta name="twitter:description" content="Master AI chips with our free comprehensive course! Learn silicon manufacturing, transistors, CPU vs GPU vs TPU, and why AI needs special chips.">
     <meta name="twitter:image" content="https://silicode.tech/silicode_horizontal_logo.png">
     <meta name="twitter:image:alt" content="Intro to AI Chips Course - Silicode Learn">
@@ -760,7 +761,7 @@
             <button class="sidebar-toggle" id="sidebarToggle">📚 Course Contents</button>
             
             <div class="lesson-header">
-                <h1 class="lesson-title" id="lessonTitle">From Sand to Silicon</h1>
+                <h1 class="lesson-title" id="lessonTitle">Silicode Learn: From Sand to Silicon</h1>
                 <p class="lesson-subtitle" id="lessonSubtitle">Understanding how silicon chips are made from raw materials</p>
             </div>
 
@@ -1082,7 +1083,7 @@
             const lesson = courseData[lessonNumber];
             if (!lesson) return;
 
-            document.getElementById('lessonTitle').textContent = lesson.title;
+            document.getElementById('lessonTitle').textContent = `Silicode Learn: ${lesson.title}`;
             document.getElementById('lessonSubtitle').textContent = lesson.subtitle;
             document.getElementById('lessonContent').innerHTML = lesson.content;
 

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>AI Chips Course - Silicode Learn | Free Tutorial</title>
+    <meta name="description" content="Master AI chips with our free comprehensive course! Learn silicon manufacturing, transistors, CPU vs GPU vs TPU, and why AI needs special chips. Interactive quizzes included.">
+    <link rel="canonical" href="https://silicode.tech/learn.html">
+    
+    <!-- AMP Boilerplate -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    
+    <!-- AMP Components -->
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    
+    <!-- Custom Styles -->
+    <style amp-custom>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo amp-img {
+            height: 70px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: #888;
+            transform: translateX(10px);
+        }
+
+        .nav-links a.active {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 100px;
+            flex-direction: column;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 100%;
+            background: #111;
+            border-bottom: 1px solid #222;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-header {
+            padding: 0 0 2rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .course-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #fff;
+            border-radius: 2px;
+            width: 20%;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+        }
+
+        .lesson-list {
+            list-style: none;
+        }
+
+        .lesson-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-link {
+            display: block;
+            padding: 1rem;
+            color: #888;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: #1a1a1a;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-link:hover {
+            background: #222;
+            color: #fff;
+        }
+
+        .lesson-link.active {
+            background: #222;
+            color: #fff;
+            border-left-color: #fff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            max-width: 100%;
+        }
+
+        .lesson-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .lesson-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .lesson-subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .lesson-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lesson-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .lesson-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-text h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #fff;
+        }
+
+        .lesson-text ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .lesson-text li {
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+
+        /* Diagram Placeholder */
+        .diagram {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: #888;
+        }
+
+        .diagram-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .diagram-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .quiz-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option {
+            margin-bottom: 0.8rem;
+        }
+
+        .quiz-option label {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .quiz-option label:hover {
+            background: #222;
+            border-color: #444;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 1rem;
+            accent-color: #fff;
+        }
+
+        /* Navigation Buttons */
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Social Share */
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .lesson-title {
+                font-size: 2rem;
+            }
+
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <amp-img src="silicode_horizontal_logo.png" alt="Silicode Tech" width="200" height="70" layout="fixed"></amp-img>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/learn.html" class="active">Learn</a></li>
+                <li><a href="/#updates">Updates</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2 class="course-title">Intro to AI Chips</h2>
+                <p class="course-subtitle">A beginner-friendly journey into the chips powering modern AI</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">Lesson 1 of 5</div>
+            </div>
+            <ul class="lesson-list">
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link active">1. From Sand to Silicon</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link">2. The Transistor & Logic</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link">3. CPU vs GPU vs TPU</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link">4. Why AI Needs Special Chips</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link">5. Future of Chips</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="lesson-header">
+                <h1 class="lesson-title">Silicode Learn: From Sand to Silicon</h1>
+                <p class="lesson-subtitle">Understanding how silicon chips are made from raw materials</p>
+            </div>
+
+            <div class="lesson-content">
+                <div class="lesson-text">
+                    <p>Every computer chip starts with one of the most abundant elements on Earth: silicon. Found in sand, rocks, and even in your smartphone screen, silicon is the foundation of modern electronics. But how do we go from beach sand to the powerful processors that run our devices?</p>
+                    
+                    <p>The journey begins with <strong>silicon purification</strong>. Raw silicon is extracted from sand (silicon dioxide) through a complex chemical process. The silicon is then purified to an incredible degree - we're talking about 99.9999999% purity, or "nine nines" as engineers call it. This ultra-pure silicon forms large cylindrical crystals called ingots.</p>
+                    
+                    <p>These ingots are sliced into thin wafers, typically about 300mm in diameter and less than a millimeter thick. These wafers become the canvas for creating chips. The process involves depositing layers of different materials, etching patterns, and building up the complex structures that form transistors - the fundamental building blocks of all digital electronics.</p>
+                    
+                    <p>What makes silicon special? It's a semiconductor, meaning it can conduct electricity under certain conditions but not others. This property allows us to create switches (transistors) that can be turned on and off electronically. By arranging millions or billions of these tiny switches in specific patterns, we can create the logic circuits that perform calculations.</p>
+                    
+                    <p>The manufacturing process is incredibly precise, requiring clean rooms cleaner than hospital operating rooms. Even a single dust particle can ruin an entire wafer worth thousands of dollars. This precision is why chip manufacturing facilities cost billions of dollars to build and require years of expertise to operate.</p>
+                </div>
+                
+                <div class="diagram">
+                    <div class="diagram-title">Silicon Wafer Manufacturing Process</div>
+                    <div class="diagram-placeholder">
+                        [Diagram showing: Sand → Silicon Ingot → Wafer Slicing → Chip Fabrication]
+                    </div>
+                </div>
+                
+                <div class="quiz-section">
+                    <h3 class="quiz-title">Quick Check</h3>
+                    <p class="quiz-question">What purity level is required for silicon used in chip manufacturing?</p>
+                    <ul class="quiz-options">
+                        <li class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="a">
+                                99.9% pure
+                            </label>
+                        </li>
+                        <li class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="b">
+                                99.9999999% pure (nine nines)
+                            </label>
+                        </li>
+                        <li class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="c">
+                                95% pure
+                            </label>
+                        </li>
+                        <li class="quiz-option">
+                            <label>
+                                <input type="radio" name="q1" value="d">
+                                100% pure
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lesson-navigation">
+                <a href="/learn.html" class="nav-button">← Previous</a>
+                <a href="/learn.html" class="nav-button">Next →</a>
+            </div>
+
+            <!-- Social Share -->
+            <div class="social-share">
+                <amp-social-share type="twitter" width="45" height="33"></amp-social-share>
+                <amp-social-share type="linkedin" width="45" height="33"></amp-social-share>
+                <amp-social-share type="email" width="45" height="33"></amp-social-share>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
