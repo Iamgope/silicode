@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to AI Chips - Silicode Learn</title>
+    <meta name="description" content="A beginner-friendly journey into the chips powering modern AI. Learn about silicon, transistors, and specialized AI processors.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Silicode Tech">
+    <link rel="canonical" href="https://silicode.tech/learn.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Intro to AI Chips - Silicode Learn">
+    <meta property="og:description" content="A beginner-friendly journey into the chips powering modern AI.">
+    <meta property="og:url" content="https://silicode.tech/learn.html">
+    <meta property="og:image" content="https://silicode.tech/silicode_horizontal_logo.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@silicode_tech">
+    <meta name="twitter:title" content="Intro to AI Chips - Silicode Learn">
+    <meta name="twitter:description" content="A beginner-friendly journey into the chips powering modern AI.">
+    <meta name="twitter:image" content="https://silicode.tech/silicode_horizontal_logo.png">
+
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/silicode_horizontal_logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Intro to AI Chips",
+      "description": "A beginner-friendly journey into the chips powering modern AI",
+      "provider": {
+        "@type": "Organization",
+        "name": "Silicode Tech",
+        "url": "https://silicode.tech/"
+      },
+      "courseMode": "online",
+      "educationalLevel": "beginner"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        .nav-links a:hover {
+            color: #888;
+            transform: translateX(10px);
+        }
+
+        .nav-links a.active {
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background: #111;
+            border-right: 1px solid #222;
+            padding: 2rem 0;
+            position: fixed;
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 0 2rem 2rem;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .course-subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.4;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #fff;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+        }
+
+        .lesson-list {
+            list-style: none;
+        }
+
+        .lesson-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-link {
+            display: block;
+            padding: 1rem 2rem;
+            color: #888;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .lesson-link:hover {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .lesson-link.active {
+            background: #1a1a1a;
+            color: #fff;
+            border-left-color: #fff;
+        }
+
+        .lesson-link.completed {
+            color: #ccc;
+        }
+
+        .lesson-link.completed::after {
+            content: "✓";
+            float: right;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 300px;
+            padding: 2rem;
+            max-width: calc(100vw - 300px);
+        }
+
+        .lesson-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .lesson-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+        }
+
+        .lesson-subtitle {
+            font-size: 1.1rem;
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .lesson-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .lesson-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .lesson-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .lesson-text h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: #fff;
+        }
+
+        .lesson-text ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .lesson-text li {
+            margin-bottom: 0.5rem;
+            color: #ddd;
+        }
+
+        /* Diagram Placeholder */
+        .diagram {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            color: #888;
+        }
+
+        .diagram-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .diagram-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #1a1a1a;
+            border: 2px dashed #444;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .quiz-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .quiz-question {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ddd;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-option {
+            margin-bottom: 0.8rem;
+        }
+
+        .quiz-option label {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .quiz-option label:hover {
+            background: #222;
+            border-color: #444;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 1rem;
+            accent-color: #fff;
+        }
+
+        .quiz-option.selected label {
+            background: #333;
+            border-color: #fff;
+        }
+
+        .quiz-option.correct label {
+            background: #0a4a0a;
+            border-color: #0f6b0f;
+            color: #4ade80;
+        }
+
+        .quiz-option.incorrect label {
+            background: #4a0a0a;
+            border-color: #6b0f0f;
+            color: #f87171;
+        }
+
+        .quiz-feedback {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-weight: 500;
+            display: none;
+        }
+
+        .quiz-feedback.correct {
+            background: #0a4a0a;
+            border: 1px solid #0f6b0f;
+            color: #4ade80;
+        }
+
+        .quiz-feedback.incorrect {
+            background: #4a0a0a;
+            border: 1px solid #6b0f0f;
+            color: #f87171;
+        }
+
+        .quiz-button {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .quiz-button:hover {
+            background: #ddd;
+            transform: translateY(-1px);
+        }
+
+        .quiz-button:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Navigation Buttons */
+        .lesson-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+        }
+
+        .nav-button {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .nav-button:disabled:hover {
+            background: transparent;
+            color: #fff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .main-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                margin-left: 0;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+                padding: 1rem;
+            }
+
+            .lesson-title {
+                font-size: 2rem;
+            }
+
+            .lesson-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Mobile Sidebar Toggle */
+        .sidebar-toggle {
+            display: none;
+            background: #111;
+            border: 1px solid #333;
+            color: #fff;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar-toggle {
+                display: block;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Code blocks */
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #4ade80;
+            overflow-x: auto;
+        }
+
+        /* Highlight boxes */
+        .highlight-box {
+            background: #1a1a1a;
+            border-left: 4px solid #fff;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box h4 {
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .highlight-box p {
+            color: #ddd;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="silicode_horizontal_logo.png" alt="Silicode Tech">
+                </a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#community">Community</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/learn.html" class="active">Learn</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2 class="course-title">Intro to AI Chips</h2>
+                <p class="course-subtitle">A beginner-friendly journey into the chips powering modern AI</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">Lesson 1 of 5</div>
+            </div>
+            <ul class="lesson-list">
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link active" data-lesson="1">1. From Sand to Silicon</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link" data-lesson="2">2. The Transistor & Logic</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link" data-lesson="3">3. CPU vs GPU vs TPU</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link" data-lesson="4">4. Why AI Needs Special Chips</a>
+                </li>
+                <li class="lesson-item">
+                    <a href="#" class="lesson-link" data-lesson="5">5. Future of Chips</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <button class="sidebar-toggle" id="sidebarToggle">📚 Course Contents</button>
+            
+            <div class="lesson-header">
+                <h1 class="lesson-title" id="lessonTitle">From Sand to Silicon</h1>
+                <p class="lesson-subtitle" id="lessonSubtitle">Understanding how silicon chips are made from raw materials</p>
+            </div>
+
+            <div class="lesson-content" id="lessonContent">
+                <!-- Lesson content will be dynamically loaded here -->
+            </div>
+
+            <div class="lesson-navigation">
+                <button class="nav-button" id="prevButton" disabled>← Previous</button>
+                <button class="nav-button" id="nextButton">Next →</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Course data
+        const courseData = {
+            1: {
+                title: "From Sand to Silicon",
+                subtitle: "Understanding how silicon chips are made from raw materials",
+                content: `
+                    <div class="lesson-text">
+                        <p>Every computer chip starts with one of the most abundant elements on Earth: silicon. Found in sand, rocks, and even in your smartphone screen, silicon is the foundation of modern electronics. But how do we go from beach sand to the powerful processors that run our devices?</p>
+                        
+                        <p>The journey begins with <strong>silicon purification</strong>. Raw silicon is extracted from sand (silicon dioxide) through a complex chemical process. The silicon is then purified to an incredible degree - we're talking about 99.9999999% purity, or "nine nines" as engineers call it. This ultra-pure silicon forms large cylindrical crystals called ingots.</p>
+                        
+                        <p>These ingots are sliced into thin wafers, typically about 300mm in diameter and less than a millimeter thick. These wafers become the canvas for creating chips. The process involves depositing layers of different materials, etching patterns, and building up the complex structures that form transistors - the fundamental building blocks of all digital electronics.</p>
+                        
+                        <p>What makes silicon special? It's a semiconductor, meaning it can conduct electricity under certain conditions but not others. This property allows us to create switches (transistors) that can be turned on and off electronically. By arranging millions or billions of these tiny switches in specific patterns, we can create the logic circuits that perform calculations.</p>
+                        
+                        <p>The manufacturing process is incredibly precise, requiring clean rooms cleaner than hospital operating rooms. Even a single dust particle can ruin an entire wafer worth thousands of dollars. This precision is why chip manufacturing facilities cost billions of dollars to build and require years of expertise to operate.</p>
+                    </div>
+                    
+                    <div class="diagram">
+                        <div class="diagram-title">Silicon Wafer Manufacturing Process</div>
+                        <div class="diagram-placeholder">
+                            [Diagram showing: Sand → Silicon Ingot → Wafer Slicing → Chip Fabrication]
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-section">
+                        <h3 class="quiz-title">Quick Check</h3>
+                        <p class="quiz-question">What purity level is required for silicon used in chip manufacturing?</p>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q1" value="a">
+                                    99.9% pure
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q1" value="b">
+                                    99.9999999% pure (nine nines)
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q1" value="c">
+                                    95% pure
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q1" value="d">
+                                    100% pure
+                                </label>
+                            </li>
+                        </ul>
+                        <button class="quiz-button" onclick="checkAnswer(1, 'b')">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                `
+            },
+            2: {
+                title: "The Transistor & Logic",
+                subtitle: "How tiny switches create the digital world",
+                content: `
+                    <div class="lesson-text">
+                        <p>A transistor is essentially a tiny electronic switch. Think of it like a light switch in your home, but instead of controlling electricity to a light bulb, it controls the flow of electrical signals in a computer chip. The key difference is that transistors can be switched on and off incredibly fast - millions or billions of times per second.</p>
+                        
+                        <p>Modern transistors are unimaginably small. The latest chips contain transistors that are only a few nanometers wide - that's smaller than a virus! To put this in perspective, if a transistor were the size of a house, a chip would be the size of a city. This miniaturization is what has driven the incredible growth in computing power over the past decades.</p>
+                        
+                        <p>Transistors work by controlling the flow of electrons through a semiconductor material. When a small electrical signal (voltage) is applied to the transistor's "gate," it creates an electric field that either allows or blocks the flow of current between two other terminals. This on/off state represents the binary 1s and 0s that form the basis of all digital computing.</p>
+                        
+                        <p>By combining transistors in different arrangements, we can create logic gates - the building blocks of digital circuits. For example, an AND gate only outputs a 1 when both inputs are 1. An OR gate outputs a 1 when either input is 1. These simple operations, when combined in complex patterns, can perform any calculation imaginable.</p>
+                        
+                        <p>The beauty of digital logic is its reliability. Unlike analog systems where small variations can cause errors, digital systems are either on or off, 1 or 0. This binary nature makes computers incredibly reliable and allows for error correction and data integrity that would be impossible with analog systems.</p>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <h4>💡 Key Concept</h4>
+                        <p>Moore's Law predicted that the number of transistors on a chip would double every two years. While this trend is slowing down due to physical limitations, it has held true for over 50 years, driving the exponential growth in computing power.</p>
+                    </div>
+                    
+                    <div class="quiz-section">
+                        <h3 class="quiz-title">Understanding Logic</h3>
+                        <p class="quiz-question">What does an AND gate output when both inputs are 1?</p>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q2" value="a">
+                                    0
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q2" value="b">
+                                    1
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q2" value="c">
+                                    It depends on the gate design
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q2" value="d">
+                                    An error occurs
+                                </label>
+                            </li>
+                        </ul>
+                        <button class="quiz-button" onclick="checkAnswer(2, 'b')">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                `
+            },
+            3: {
+                title: "CPU vs GPU vs TPU",
+                subtitle: "Different processors for different tasks",
+                content: `
+                    <div class="lesson-text">
+                        <p>Not all processors are created equal. While they all use the same basic transistor technology, they're optimized for different types of work. Understanding these differences is crucial for understanding why AI needs specialized chips.</p>
+                        
+                        <p><strong>CPUs (Central Processing Units)</strong> are the "generalists" of computing. They're designed to handle a wide variety of tasks efficiently, from running your operating system to playing games to editing documents. CPUs typically have a few powerful cores (4-16 in most consumer devices) that can handle complex, sequential tasks very well. They excel at tasks that require complex decision-making and branching logic.</p>
+                        
+                        <p><strong>GPUs (Graphics Processing Units)</strong> are the "specialists" for parallel processing. Originally designed for rendering graphics, GPUs have thousands of smaller, simpler cores that can all work on the same type of calculation simultaneously. This makes them incredibly powerful for tasks that can be broken down into many similar operations, like image processing, scientific simulations, and machine learning.</p>
+                        
+                        <p><strong>TPUs (Tensor Processing Units)</strong> are Google's specialized chips designed specifically for machine learning workloads. They're optimized for the matrix multiplication operations that are fundamental to neural networks. While GPUs can handle AI workloads well, TPUs are purpose-built for this task and can be more efficient for certain types of AI computations.</p>
+                        
+                        <p>The key insight is that different workloads have different computational patterns. Traditional software often involves complex, sequential logic with lots of branching (if-then statements). AI workloads, on the other hand, involve massive amounts of simple, parallel calculations - perfect for GPU-style architectures.</p>
+                    </div>
+                    
+                    <div class="diagram">
+                        <div class="diagram-title">Processor Architecture Comparison</div>
+                        <div class="diagram-placeholder">
+                            [Diagram showing: CPU (few powerful cores) vs GPU (many simple cores) vs TPU (AI-optimized cores)]
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-section">
+                        <h3 class="quiz-title">Processor Knowledge</h3>
+                        <p class="quiz-question">Which type of processor is best suited for training neural networks?</p>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q3" value="a">
+                                    CPU - because it handles complex logic well
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q3" value="b">
+                                    GPU - because it excels at parallel processing
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q3" value="c">
+                                    TPU - because it's designed specifically for AI
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q3" value="d">
+                                    All are equally good
+                                </label>
+                            </li>
+                        </ul>
+                        <button class="quiz-button" onclick="checkAnswer(3, 'c')">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                `
+            },
+            4: {
+                title: "Why AI Needs Special Chips",
+                subtitle: "The computational demands of artificial intelligence",
+                content: `
+                    <div class="lesson-text">
+                        <p>Artificial intelligence, particularly deep learning, places unique demands on computer hardware that traditional CPUs weren't designed to handle efficiently. Understanding these demands helps explain why specialized AI chips are becoming increasingly important.</p>
+                        
+                        <p><strong>Massive Parallelism:</strong> Neural networks perform millions or billions of simple calculations simultaneously. Each neuron in a network might be connected to thousands of other neurons, and all these connections need to be computed in parallel. A traditional CPU with 8 cores simply can't match the parallel processing power of a GPU with thousands of cores.</p>
+                        
+                        <p><strong>Matrix Operations:</strong> At their core, neural networks are essentially performing matrix multiplications. These operations involve multiplying large arrays of numbers together. While CPUs can do this, they're not optimized for it. GPUs and TPUs, on the other hand, are designed to handle these operations very efficiently.</p>
+                        
+                        <p><strong>Memory Bandwidth:</strong> AI models often require accessing vast amounts of data quickly. Modern AI models can have billions of parameters (weights), and during training, all of these need to be accessed and updated frequently. This creates enormous memory bandwidth requirements that exceed what traditional computer architectures can provide.</p>
+                        
+                        <p><strong>Energy Efficiency:</strong> Training large AI models can consume enormous amounts of electricity. Specialized AI chips are designed to perform AI computations more efficiently, reducing both the time and energy required. This is crucial for making AI accessible and environmentally sustainable.</p>
+                        
+                        <p><strong>Real-time Processing:</strong> Many AI applications, like autonomous vehicles or real-time translation, require immediate responses. Specialized chips can process AI workloads much faster than general-purpose processors, enabling these real-time applications.</p>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <h4>🔍 Real-World Example</h4>
+                        <p>Training GPT-3, a large language model, required thousands of GPUs running for weeks and consumed millions of dollars worth of electricity. Specialized AI chips could potentially reduce this cost and time significantly.</p>
+                    </div>
+                    
+                    <div class="quiz-section">
+                        <h3 class="quiz-title">AI Requirements</h3>
+                        <p class="quiz-question">What is the primary computational operation in neural networks?</p>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q4" value="a">
+                                    Complex branching logic
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q4" value="b">
+                                    Matrix multiplications
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q4" value="c">
+                                    File system operations
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q4" value="d">
+                                    Network communication
+                                </label>
+                            </li>
+                        </ul>
+                        <button class="quiz-button" onclick="checkAnswer(4, 'b')">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                `
+            },
+            5: {
+                title: "Future of Chips",
+                subtitle: "What's next in processor technology",
+                content: `
+                    <div class="lesson-text">
+                        <p>The future of computer chips is being shaped by the growing demands of AI and the physical limitations of traditional silicon-based transistors. As we approach the fundamental limits of how small we can make silicon transistors, researchers are exploring entirely new approaches to computing.</p>
+                        
+                        <p><strong>Beyond Silicon:</strong> While silicon has served us well for decades, researchers are investigating alternative materials like gallium nitride, graphene, and even biological molecules. These materials might offer better performance, lower power consumption, or entirely new computing paradigms.</p>
+                        
+                        <p><strong>Neuromorphic Computing:</strong> Inspired by the human brain, neuromorphic chips are designed to mimic the structure and function of biological neural networks. These chips could be incredibly efficient for AI workloads and might even enable new types of AI that are impossible with traditional architectures.</p>
+                        
+                        <p><strong>Quantum Computing:</strong> While still in early stages, quantum computers promise to solve certain types of problems exponentially faster than classical computers. Quantum AI algorithms could revolutionize machine learning, though practical quantum computers are still years away.</p>
+                        
+                        <p><strong>3D Integration:</strong> Instead of making transistors smaller, we're stacking them vertically. This 3D approach allows for more processing power in the same footprint and could enable new architectures that aren't possible with flat designs.</p>
+                        
+                        <p><strong>Specialized AI Chips:</strong> We're seeing an explosion of specialized AI processors from companies like NVIDIA, Google, Apple, and startups. These chips are optimized for specific AI workloads and are becoming increasingly sophisticated and efficient.</p>
+                        
+                        <p>The next decade will likely see a shift from general-purpose computing toward specialized, AI-optimized architectures. This specialization will enable new applications and make AI more accessible, efficient, and powerful than ever before.</p>
+                    </div>
+                    
+                    <div class="diagram">
+                        <div class="diagram-title">Future Computing Paradigms</div>
+                        <div class="diagram-placeholder">
+                            [Diagram showing: Traditional Silicon → Neuromorphic → Quantum → Specialized AI chips]
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-section">
+                        <h3 class="quiz-title">Future Vision</h3>
+                        <p class="quiz-question">What is neuromorphic computing inspired by?</p>
+                        <ul class="quiz-options">
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q5" value="a">
+                                    Traditional computer architecture
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q5" value="b">
+                                    The human brain
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q5" value="c">
+                                    Quantum mechanics
+                                </label>
+                            </li>
+                            <li class="quiz-option">
+                                <label>
+                                    <input type="radio" name="q5" value="d">
+                                    Silicon manufacturing
+                                </label>
+                            </li>
+                        </ul>
+                        <button class="quiz-button" onclick="checkAnswer(5, 'b')">Check Answer</button>
+                        <div class="quiz-feedback"></div>
+                    </div>
+                `
+            }
+        };
+
+        let currentLesson = 1;
+        const totalLessons = 5;
+
+        // Initialize the course
+        function initCourse() {
+            loadLesson(currentLesson);
+            updateProgress();
+            updateNavigation();
+        }
+
+        // Load lesson content
+        function loadLesson(lessonNumber) {
+            const lesson = courseData[lessonNumber];
+            if (!lesson) return;
+
+            document.getElementById('lessonTitle').textContent = lesson.title;
+            document.getElementById('lessonSubtitle').textContent = lesson.subtitle;
+            document.getElementById('lessonContent').innerHTML = lesson.content;
+
+            // Update active lesson in sidebar
+            document.querySelectorAll('.lesson-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[data-lesson="${lessonNumber}"]`).classList.add('active');
+
+            // Mark previous lessons as completed
+            for (let i = 1; i < lessonNumber; i++) {
+                const prevLink = document.querySelector(`[data-lesson="${i}"]`);
+                if (prevLink) {
+                    prevLink.classList.add('completed');
+                }
+            }
+
+            currentLesson = lessonNumber;
+            updateProgress();
+            updateNavigation();
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const progress = (currentLesson / totalLessons) * 100;
+            document.getElementById('progressFill').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `Lesson ${currentLesson} of ${totalLessons}`;
+        }
+
+        // Update navigation buttons
+        function updateNavigation() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+
+            prevButton.disabled = currentLesson === 1;
+            nextButton.disabled = currentLesson === totalLessons;
+
+            if (currentLesson === totalLessons) {
+                nextButton.textContent = 'Complete Course ✓';
+            } else {
+                nextButton.textContent = 'Next →';
+            }
+        }
+
+        // Quiz functionality
+        function checkAnswer(questionNumber, correctAnswer) {
+            const selectedOption = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+            const feedback = document.querySelector(`#lessonContent .quiz-section .quiz-feedback`);
+            const button = document.querySelector(`#lessonContent .quiz-section .quiz-button`);
+
+            if (!selectedOption) {
+                alert('Please select an answer first!');
+                return;
+            }
+
+            const selectedValue = selectedOption.value;
+            const isCorrect = selectedValue === correctAnswer;
+
+            // Update option styling
+            document.querySelectorAll(`#lessonContent .quiz-section .quiz-option`).forEach(option => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+                if (option.querySelector('input').value === selectedValue) {
+                    option.classList.add('selected');
+                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                }
+                if (option.querySelector('input').value === correctAnswer && !isCorrect) {
+                    option.classList.add('correct');
+                }
+            });
+
+            // Show feedback
+            feedback.style.display = 'block';
+            feedback.className = `quiz-feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.textContent = isCorrect ? 
+                'Correct! Great job understanding this concept.' : 
+                `Not quite right. The correct answer is ${correctAnswer.toUpperCase()}. Review the lesson content to better understand this concept.`;
+
+            // Disable the button
+            button.disabled = true;
+        }
+
+        // Navigation functions
+        function goToPrevious() {
+            if (currentLesson > 1) {
+                loadLesson(currentLesson - 1);
+            }
+        }
+
+        function goToNext() {
+            if (currentLesson < totalLessons) {
+                loadLesson(currentLesson + 1);
+            } else {
+                // Course completed
+                alert('Congratulations! You\'ve completed the Intro to AI Chips course!');
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            initCourse();
+
+            // Navigation buttons
+            document.getElementById('prevButton').addEventListener('click', goToPrevious);
+            document.getElementById('nextButton').addEventListener('click', goToNext);
+
+            // Sidebar lesson links
+            document.querySelectorAll('.lesson-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lessonNumber = parseInt(this.dataset.lesson);
+                    loadLesson(lessonNumber);
+                });
+            });
+
+            // Mobile sidebar toggle
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('open');
+                });
+            }
+
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            if (mobileMenuToggle) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                        sidebar.classList.remove('open');
+                    }
+                }
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' && currentLesson > 1) {
+                goToPrevious();
+            } else if (e.key === 'ArrowRight' && currentLesson < totalLessons) {
+                goToNext();
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                nav.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
